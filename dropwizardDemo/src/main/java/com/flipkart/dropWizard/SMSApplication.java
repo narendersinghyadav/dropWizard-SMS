@@ -1,4 +1,4 @@
-package com.flipkart.demo;
+package com.flipkart.dropWizard;
 
 
 
@@ -14,10 +14,10 @@ import io.dropwizard.setup.Environment;
 
 
 //Application class starting point need to extend Application class of dropwizard
-public class App extends Application<Configuration>
+public class SMSApplication extends Application<Configuration>
 {
 	//slf4j logger
-	 private static final Logger logger = LoggerFactory.getLogger(App.class);
+	 private static final Logger logger = LoggerFactory.getLogger(SMSApplication.class);
 	 
 	 //prepare runtime environment
 	 @Override
@@ -34,6 +34,6 @@ public class App extends Application<Configuration>
 	 
 	    //main method
 	    public static void main(String[] args) throws Exception {
-	    	new App().run(args);
+	    	new SMSApplication().run(args);
 	    }
 }
