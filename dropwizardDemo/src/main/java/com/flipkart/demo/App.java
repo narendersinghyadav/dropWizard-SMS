@@ -13,21 +13,27 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
 
+//Application class starting point need to extend Application class of dropwizard
 public class App extends Application<Configuration>
 {
+	//slf4j logger
 	 private static final Logger logger = LoggerFactory.getLogger(App.class);
 	 
-	    @Override
+	 //prepare runtime environment
+	 @Override
 	    public void initialize(Bootstrap<Configuration> b) {
 	    }
 	 
+	    //run method prepare runtime environment
 	    @Override
 	    public void run(Configuration c, Environment e) throws Exception {
 	        logger.info("Registering REST resources");
+	        //registering controller to jersey in dropwizard environemt
 	        e.jersey().register(new AdminRestController());
 	    }
 	 
+	    //main method
 	    public static void main(String[] args) throws Exception {
-	        new App().run(args);
+	    	new App().run(args);
 	    }
 }
